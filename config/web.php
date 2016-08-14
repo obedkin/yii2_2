@@ -6,12 +6,13 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'language' => 'ru-RU',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '59PNeT_JdI8WtQPfrhwhje194RQS9WmC',
+            'cookieValidationKey' => 'uvxfBK9B1S8ovnPJGbcAYyRrRCj56Qh3',
+            'baseUrl' => '',
         ],
-        'language'=>'ru-RU',
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

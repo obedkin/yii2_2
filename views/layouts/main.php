@@ -3,16 +3,17 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use app\assets\ltAppAsset;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\assets\ltAppAsset;
 
 AppAsset::register($this);
 ltAppAsset::register($this);
 ?>
+<?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
@@ -22,12 +23,11 @@ ltAppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 
+    <?php
+//        $this->registerJsFile('js/html5shiv.js', ['position' => \yii\web\View::POS_HEAD, 'condition' => 'lte IE9']);
+//        $this->registerJsFile('js/respond.min.js', ['position' => \yii\web\View::POS_HEAD, 'condition' => 'lte IE9']);
+    ?>
 
-
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
@@ -69,7 +69,7 @@ ltAppAsset::register($this);
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src="images/home/logo.png" alt=""/></a>
+                        <a href="index.html"><img src="/images/home/logo.png" alt="" /></a>
                     </div>
                     <div class="btn-group pull-right">
                         <div class="btn-group">
@@ -155,7 +155,7 @@ ltAppAsset::register($this);
     </div><!--/header-bottom-->
 </header><!--/header-->
 
-<?=$content;?>
+<?= $content ?>
 
 <footer id="footer"><!--Footer-->
     <div class="footer-top">
@@ -172,7 +172,7 @@ ltAppAsset::register($this);
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="images/home/iframe1.png" alt=""/>
+                                    <img src="/images/home/iframe1.png" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -187,7 +187,7 @@ ltAppAsset::register($this);
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="images/home/iframe2.png" alt=""/>
+                                    <img src="/images/home/iframe2.png" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -202,7 +202,7 @@ ltAppAsset::register($this);
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="images/home/iframe3.png" alt=""/>
+                                    <img src="/images/home/iframe3.png" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -217,7 +217,7 @@ ltAppAsset::register($this);
                         <div class="video-gallery text-center">
                             <a href="#">
                                 <div class="iframe-img">
-                                    <img src="images/home/iframe4.png" alt=""/>
+                                    <img src="/images/home/iframe4.png" alt="" />
                                 </div>
                                 <div class="overlay-icon">
                                     <i class="fa fa-play-circle-o"></i>
@@ -230,7 +230,7 @@ ltAppAsset::register($this);
                 </div>
                 <div class="col-sm-3">
                     <div class="address">
-                        <img src="images/home/map.png" alt=""/>
+                        <img src="/images/home/map.png" alt="" />
                         <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
                     </div>
                 </div>
@@ -293,9 +293,9 @@ ltAppAsset::register($this);
                     <div class="single-widget">
                         <h2>About Shopper</h2>
                         <form action="#" class="searchform">
-                            <input type="text" placeholder="Your email address"/>
+                            <input type="text" placeholder="Your email address" />
                             <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
-                            <p>Get the most recent updates from <br/>our site and be updated your self...</p>
+                            <p>Get the most recent updates from <br />our site and be updated your self...</p>
                         </form>
                     </div>
                 </div>
@@ -314,7 +314,6 @@ ltAppAsset::register($this);
     </div>
 
 </footer><!--/Footer-->
-
 
 <?php $this->endBody() ?>
 </body>
