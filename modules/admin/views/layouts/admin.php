@@ -12,8 +12,6 @@ use app\assets\ltAppAsset;
 
 AppAsset::register($this);
 ltAppAsset::register($this);
-
-
 ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
@@ -161,7 +159,9 @@ ltAppAsset::register($this);
         </div><!--/header-bottom-->
     </header><!--/header-->
 
-    <?= $content ?>
+    <div class="container">
+        <?= $content ?>
+    </div>
 
     <footer id="footer"><!--Footer-->
         <div class="footer-top">
