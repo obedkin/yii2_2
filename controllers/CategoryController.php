@@ -21,8 +21,7 @@ class CategoryController extends AppController{
     }
 
     public function actionView($id){
-        $id = Yii::$app->request->get('id');
-
+//        $id = Yii::$app->request->get('id');
         $category = Category::findOne($id);
         if(empty($category))
             throw new \yii\web\HttpException(404, 'Такой категории нет');
@@ -35,7 +34,6 @@ class CategoryController extends AppController{
         return $this->render('view', compact('products', 'pages', 'category'));
     }
 
-
     public function actionSearch(){
         $q = trim(Yii::$app->request->get('q'));
         $this->setMeta('E-SHOPPER | Поиск: ' . $q);
@@ -46,6 +44,5 @@ class CategoryController extends AppController{
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         return $this->render('search', compact('products', 'pages', 'q'));
     }
-
 
 } 
