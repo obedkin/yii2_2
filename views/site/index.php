@@ -4,7 +4,6 @@
 
 $this->title = 'My Yii Application';
 ?>
-
 <section id="slider"><!--slider-->
     <div class="container">
         <div class="row">
